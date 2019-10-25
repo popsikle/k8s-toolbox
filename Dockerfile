@@ -1,5 +1,6 @@
 FROM chriswayg/toolbox
 ENV TERM=xterm
 
-RUN apk --no-cache add --update \
+RUN apk upgrade && \
+    apk --no-cache add --update \
     curl
