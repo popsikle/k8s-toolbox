@@ -1,0 +1,25 @@
+I use this to debug k8s installs, I deploy it to a k8s cluster via a deployment yaml:
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: toolbox-deployment
+  labels:
+    app: toolbox
+spec:
+  selector:
+    matchLabels:
+      app: toolbox
+  template:
+    metadata:
+      labels:
+        app: toolbox
+    spec:
+      containers:
+      - name: toolbox
+        image: popsikle/toolbox
+        command: ["bash","-c","while true; do sleep 60s; done"]
+```
+
+And then I just exec into the pod!
