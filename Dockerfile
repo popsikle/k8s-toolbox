@@ -3,4 +3,4 @@ ENV TERM=xterm
 
 RUN apk upgrade && \
     apk --no-cache add --update \
-    curl
+    curl busybox-extras redis postgresql-client
